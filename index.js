@@ -6,24 +6,24 @@ const Animal = require("./resolvers/Animal");
 const Category = require("./resolvers/Category");
 const Mutation = require("./resolvers/Mutation");
 
-// Resolvers 
+// Resolvers
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
   typeDefs,
   resolvers: {
+    introspection: true,
+    playground: true,
     Query,
     Mutation,
     Animal,
-    Category
+    Category,
   },
   context: {
-      mainCards,
-      animals,
-      categories
-
-
-  }
+    mainCards,
+    animals,
+    categories,
+  },
 });
 
 // The `listen` method launches a web server.
