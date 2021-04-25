@@ -12,8 +12,6 @@ const Mutation = require("./resolvers/Mutation");
 const server = new ApolloServer({
   typeDefs,
   resolvers: {
-    introspection: true,
-    playground: true,
     Query,
     Mutation,
     Animal,
